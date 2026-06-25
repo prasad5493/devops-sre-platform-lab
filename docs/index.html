@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>DevOps SRE Platform Lab</title>
+  <link rel="stylesheet" href="assets/style.css" />
+</head>
+<body>
+  <header class="hero">
+    <div class="container">
+      <p class="eyebrow">DevOps / SRE Interview Project</p>
+      <h1>DevOps SRE Platform Lab</h1>
+      <p class="hero-text">
+        A practical learning project covering AWS, CloudFormation, Ansible, Linux,
+        CI/CD, Git, scripting, monitoring, incident response, and documentation.
+      </p>
+      <a class="button" href="#architecture">View Architecture</a>
+    </div>
+  </header>
+
+  <main class="container">
+    <section class="cards">
+      <article class="card">
+        <h2>Infrastructure as Code</h2>
+        <p>AWS resources are defined using a CloudFormation YAML template.</p>
+      </article>
+      <article class="card">
+        <h2>Configuration Management</h2>
+        <p>Ansible configures a Linux web server in a repeatable way.</p>
+      </article>
+      <article class="card">
+        <h2>CI/CD</h2>
+        <p>GitHub Actions checks code and deploys this site to GitHub Pages.</p>
+      </article>
+      <article class="card">
+        <h2>Reliability</h2>
+        <p>Health checks, CloudWatch alarms, and runbooks support operations.</p>
+      </article>
+    </section>
+
+    <section id="architecture" class="panel">
+      <h2>Architecture</h2>
+      <pre>
+Developer
+   |
+   v
+GitHub Repository
+   |
+   +--> GitHub Actions CI checks
+   |
+   +--> GitHub Pages deployment
+   |
+   +--> CloudFormation template
+             |
+             v
+          AWS VPC
+             |
+             v
+          EC2 Linux Server
+             |
+             v
+          Nginx Web App + CloudWatch Alarm
+      </pre>
+    </section>
+
+    <section class="panel">
+      <h2>Live Demo Health Panel</h2>
+      <p>This is a simple front-end simulation of a service status dashboard.</p>
+      <div class="status-grid">
+        <div class="status ok">Website: Healthy</div>
+        <div class="status ok">CI/CD: Passing</div>
+        <div class="status warn">CloudWatch: Demo Alarm</div>
+        <div class="status ok">Runbooks: Available</div>
+      </div>
+      <button id="healthButton">Run demo health check</button>
+      <p id="healthResult" class="result">No health check has been run yet.</p>
+    </section>
+
+    <section class="panel">
+      <h2>Concepts Covered</h2>
+      <ul class="concept-list">
+        <li>AWS EC2, VPC, Security Groups, IAM, CloudWatch</li>
+        <li>AWS CloudFormation Infrastructure as Code</li>
+        <li>Ansible configuration management</li>
+        <li>Linux administration and troubleshooting</li>
+        <li>GitHub Actions CI/CD</li>
+        <li>Python, Bash, and PowerShell scripts</li>
+        <li>Monitoring, alerting, incident response, and RCA</li>
+      </ul>
+    </section>
+
+    <section class="panel">
+      <h2>Interview Summary</h2>
+      <p>
+        I built this project to practise DevOps and SRE responsibilities. It shows how I can define cloud infrastructure as code,
+        automate server setup, create CI/CD workflows, troubleshoot systems, and document operational processes.
+      </p>
+    </section>
+  </main>
+
+  <footer>
+    <p>DevOps SRE Platform Lab — built for interview preparation.</p>
+  </footer>
+
+  <script src="assets/script.js"></script>
+</body>
+</html>

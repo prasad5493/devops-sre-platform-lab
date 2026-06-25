@@ -1,0 +1,60 @@
+---
+- name: Configure Linux web server for DevOps SRE Platform Lab
+  hosts: webservers
+  become: true
+
+  tasks:
+    - name: Install Nginx on Amazon Linux
+      ansible.builtin.dnf:
+        name: nginx
+        state: present
+
+    - name: Start and enable Nginx
+      ansible.builtin.service:
+        name: nginx
+        state: started
+        enabled: true
+
+    - name: Create web root directory
+      ansible.builtin.file:
+        path: "{{ web_root }}"
+        state: directory
+        owner: root
+        group: root
+        mode: '0755'
+
+    - name: Copy simple HTML page
+      ansible.builtin.copy:
+        dest: "{{ web_root }}/index.html"
+        owner: root
+        group: root
+        mode: '0644'
+        content: |
+          <!DOCTYPE html>
+          <html lang="en">
+          <head>
+            <meta charset="UTF-8">
+            <title>{{ app_name }}</title>
+          </head>
+          <body>
+            <h1>{{ app_name }}</h1>
+            <p>Nginx was configured by Ansible.</p>
+          </body>
+          </html>
+
+    - name: Create health endpoint
+      ansible.builtin.copy:
+        dest: "{{ web_root }}/health"
+        owner: root
+        group: root
+        mode: '0644'
+        content: "healthy\n"
+
+    - name: Check Nginx service status
+      ansible.builtin.command: systemctl is-active nginx
+      changed_when: false
+      register: nginx_status
+
+    - name: Show Nginx status
+      ansible.builtin.debug:
+        msg: "Nginx status is {{ nginx_status.stdout }}"
