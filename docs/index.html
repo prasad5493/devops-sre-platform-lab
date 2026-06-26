@@ -12,10 +12,14 @@
       <p class="eyebrow">DevOps / SRE Interview Project</p>
       <h1>DevOps SRE Platform Lab</h1>
       <p class="hero-text">
+        This project is created by <strong>Prasad Bhor</strong> to demonstrate practical DevOps and Site Reliability Engineering skills.
+      </p>
+      <p class="hero-text">
         A practical learning project covering AWS, CloudFormation, Ansible, Linux,
         CI/CD, Git, scripting, monitoring, incident response, and documentation.
       </p>
       <a class="button" href="#architecture">View Architecture</a>
+      <a class="button" href="#evidence">View Project Evidence</a>
     </div>
   </header>
 
@@ -47,20 +51,28 @@ Developer
    v
 GitHub Repository
    |
-   +--> GitHub Actions CI checks
-   |
-   +--> GitHub Pages deployment
-   |
-   +--> CloudFormation template
-             |
-             v
-          AWS VPC
-             |
-             v
-          EC2 Linux Server
-             |
-             v
-          Nginx Web App + CloudWatch Alarm
+   +--------------------+
+   |                    |
+   v                    v
+GitHub Actions       CloudFormation Template
+   |                    |
+   v                    v
+GitHub Pages          AWS CloudFormation
+Documentation Site      |
+                        v
+                    AWS Infrastructure
+                        |
+                        v
+                    VPC + Security Group
+                        |
+                        v
+                    EC2 Linux Server
+                        |
+                        v
+                    Nginx Web App
+                        |
+                        v
+                    CloudWatch Alarm      
       </pre>
     </section>
 
@@ -97,10 +109,42 @@ GitHub Repository
         automate server setup, create CI/CD workflows, troubleshoot systems, and document operational processes.
       </p>
     </section>
+
+    <section id="evidence" class="panel">
+      <h2>Project Evidence</h2>
+
+      <h3>1. AWS Website Running</h3>
+      <p>This shows the Nginx website running on an AWS EC2 Linux server.</p>
+      <img src="assets/screenshots/01-aws-website-running.png" alt="AWS website running" width="900">
+
+      <h3>2. CloudFormation Stack Created Successfully</h3>
+      <p>This shows the AWS CloudFormation stack completed successfully.</p>
+      <img src="assets/screenshots/02-cloudformation-create-complete.png" alt="CloudFormation CREATE_COMPLETE" width="900">
+
+      <h3>3. EC2 Instance Running</h3>
+      <p>This shows the EC2 Linux server running in AWS.</p>
+      <img src="assets/screenshots/03-ec2-instance-running.png" alt="EC2 instance running" width="900">
+
+      <h3>4. GitHub Repository</h3>
+      <p>This shows the project source code stored in GitHub.</p>
+      <img src="assets/screenshots/04-github-repository.png" alt="GitHub repository" width="900">
+
+      <h3>5. GitHub Actions Pipeline Passed</h3>
+      <p>This shows the CI/CD pipeline completed successfully.</p>
+      <img src="assets/screenshots/05-github-actions-success.png" alt="GitHub Actions success" width="900">
+
+      <h3>6. GitHub Pages Site</h3>
+      <p>This shows the project documentation deployed using GitHub Pages.</p>
+      <img src="assets/screenshots/06-github-pages-site.png" alt="GitHub Pages site" width="900">
+
+      <h3>7. CloudFormation Infrastructure Composer</h3>
+      <p>This shows the project template view in AWS Infrastructure Composer.</p>
+      <img src="assets/screenshots/07-cloudformation-infrastructure-composer.png" alt="CloudFormation Infrastructure Composer" width="900">
+    </section>
   </main>
 
   <footer>
-    <p>DevOps SRE Platform Lab — built for interview preparation.</p>
+    <p>DevOps SRE Platform Lab </p>
   </footer>
 
   <script src="assets/script.js"></script>
